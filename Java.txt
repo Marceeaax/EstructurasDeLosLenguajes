@@ -1,0 +1,37 @@
+import java.util.Map;
+import java.util.HashMap;
+
+public class main
+{
+    
+    public static void main(String args[])
+    {
+	// Mapa implementado con tabla hash
+        Map<Character, Integer> tablahash = new HashMap<>();
+        String cadena = "Actividad2";
+        int n = cadena.length();
+        
+	// Iterar en la tabla hash, aumentar frequencia si el caracter ya se encontro
+	// Caso contrario, agregar nuevo caracter a la tabla hash
+
+        for (int i = 0; i < n; i++)
+        {
+            if (tablahash.containsKey(cadena.charAt(i)))
+            {
+                tablahash.put(cadena.charAt(i), tablahash.get(cadena.charAt(i)) + 1);
+            }
+            else
+            {
+                tablahash.put(cadena.charAt(i), 1);
+            }
+            
+        }
+        
+        // Imprimir cada caracter 
+        
+        for (Map.Entry<Character, Integer> entry : tablahash.entrySet())
+        {
+            System.out.println("El caracter" + " " + entry.getKey() + " " + "aparece" + " " + entry.getValue() + " " + ((entry.getValue() == 1) ? "vez" : "veces"));
+        }
+    }
+}

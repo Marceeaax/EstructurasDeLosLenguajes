@@ -1,0 +1,33 @@
+// C# implementation of the approach
+using System;
+using System.Collections.Generic;
+
+class main
+{
+	public static void Main(String []args)
+	{
+	    Dictionary<char, int> tablahash = new Dictionary<char,int>();
+	    string cadena = "Actividad2";
+		int n = cadena.Length;
+		
+		for (int i = 0; i < n; i++)
+		{
+			if (tablahash.ContainsKey(cadena[i]))
+			{
+				var frecuencia = tablahash[cadena[i]];
+				tablahash.Remove(cadena[i]);
+				tablahash.Add(cadena[i], frecuencia + 1);
+			}
+			else
+			{
+				tablahash.Add(cadena[i], 1);
+			}
+		}
+		
+		foreach(KeyValuePair<char, int> entry in tablahash)
+		{
+			Console.WriteLine("El caracter" + " " + entry.Key + " " + "aparece" + " " + entry.Value + " " + ((entry.Value == 1) ? "vez" : "veces"));
+		}
+	}
+}
+

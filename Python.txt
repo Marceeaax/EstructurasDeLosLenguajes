@@ -1,0 +1,23 @@
+// Crear un diccionario en python que servira como tabla hash
+
+cadena = "Actividad2"
+tablahash = dict()
+n = len(cadena)
+
+// Agregar caracter si no existe en el diccionario
+// Si ya existe, aumentar la frecuencia
+
+for i in range(n):
+	if cadena[i] in tablahash.keys():
+		tablahash[cadena[i]] += 1
+	else:
+		tablahash[cadena[i]] = 1
+
+// Imprimir los caracteres 
+
+for j in tablahash:
+	print("El caracter",j,"aparece",tablahash[j],"",end='', flush=True)
+	print("vez") if tablahash[j] == 1 else print("veces")
+
+
+	
